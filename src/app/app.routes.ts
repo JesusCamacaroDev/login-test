@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import Home from './components/home/home';
-import Login from './components/login/login';
 
 export const routes: Routes = [
 
@@ -8,16 +6,24 @@ export const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-
-  { path: 'login',
-    title: 'Login',
-    component: Login
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login')
   },
-  { path: 'home',
-    title: 'Home',
-    component: Home
+  {
+    path: 'layout',
+    loadComponent: () => import('./pages/layout/layout'),
+    children: [
+      {
+        path: 'home',
+        loadComponent: () => import('./pages/home/home')
+      },
+      {
+        path: 'catalogo',
+        loadComponent: () => import('./pages/catalogo/catalogo')
+      }
+    ]
   },
-
 
 
 ];

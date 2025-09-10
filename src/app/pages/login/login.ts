@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   standalone: true, // Los componentes standalone necesitan importar sus dependencias
   imports: [
-    CommonModule, // Necesario para directivas como *ngIf
     ReactiveFormsModule // Necesario para formularios reactivos
   ],
   templateUrl: './login.html',
@@ -21,7 +20,7 @@ export default class Login {
       // Define los controles del formulario y sus validaciones
       // Se elimina Validators.email para permitir usuarios como 'admin'
       username: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 
@@ -31,8 +30,8 @@ export default class Login {
 
       // Lógica de autenticación básica
       if (username === 'admin' && password === 'admin') {
-        console.log('Login exitoso. Redirigiendo a /home...');
-        this.router.navigate(['/home']); // Redirige a la ruta /home
+        console.log('Login exitoso. Redirigiendo a /layout...');
+        this.router.navigate(['/layout']); // Redirige a la ruta /layout
       } else {
         console.log('Credenciales incorrectas.');
         // Aquí podrías mostrar un mensaje de error en la UI

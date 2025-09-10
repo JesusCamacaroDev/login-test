@@ -1,0 +1,20 @@
+<div class="sidebar-container">
+  <div class="sidebar-header">
+    <h3>Menú</h3>
+  </div>
+  <ul class="sidebar-nav">
+    <li>
+      <button (click)="navigateTo('layout/home')" class="nav-button">Inicio</button>
+    </li>
+    <li>
+      <button (click)="navigateTo('layout/catalogo')" class="nav-button">Catalogo</button>
+    </li>
+    <li>
+    <button (click)="logout()" class="logout-button">
+        Cerrar Sesión
+      </button>
+
+    </li>
+    <!-- Aquí puedes añadir más enlaces en el futuro -->
+  </ul>
+</div>
