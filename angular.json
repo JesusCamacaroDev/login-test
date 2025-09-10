@@ -18,8 +18,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
-                "_redirects": "src/_redirects"
+                "input": "public"
+
               }
             ],
             "styles": [
